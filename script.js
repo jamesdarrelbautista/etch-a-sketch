@@ -11,7 +11,7 @@ function createGrid(x) {
         };
     };
     let grid = document.querySelectorAll('.grid');
-    let dimension = 960/x;
+    let dimension = 900/x;
     grid.forEach(element => {
         element.style.width = `${dimension}px`;
         element.style.height = `${dimension}px`;
