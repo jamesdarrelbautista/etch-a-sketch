@@ -2,7 +2,7 @@ let container = document.querySelector('.container');
 let div;
 
 function createGrid(x) {
-    if(x>100) return 'too big';
+    if (x > 100) return 'too big';
     for (let rows = 0; rows < x; rows++) {
         for (let columns = 0; columns < x; columns++) {
             div = document.createElement('div');
@@ -11,16 +11,26 @@ function createGrid(x) {
         };
     };
     let grid = document.querySelectorAll('.grid');
-    let dimension = 900/x;
+    let dimension = 900 / x;
     grid.forEach(element => {
         element.style.width = `${dimension}px`;
         element.style.height = `${dimension}px`;
-        element.addEventListener('mouseover',(e)=>{
+        element.addEventListener('mouseover', (e) => {
             console.log(e);
             e.target.style.backgroundColor = 'black';
         });
     });
-    console.log(960/x);
+    console.log(960 / x);
 };
 
-createGrid(10);
+createGrid(16);
+
+let button = document.querySelector('button');
+button.addEventListener('click', () => {
+    let grid = document.querySelectorAll('.grid');
+    let gridValue = prompt('How many grid do you want?');
+    grid.forEach(element => {
+        container.removeChild(element);
+    });
+    createGrid(gridValue);
+});
