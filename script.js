@@ -16,7 +16,6 @@ function createGrid(x) {
         element.style.width = `${dimension}px`;
         element.style.height = `${dimension}px`;
         element.addEventListener('mouseover', (e) => {
-            console.log(e);
             e.target.style.backgroundColor = 'black';
         });
     });
@@ -25,8 +24,8 @@ function createGrid(x) {
 
 createGrid(16);
 
-let button = document.querySelector('button');
-button.addEventListener('click', () => {
+let clear = document.querySelector('.clear');
+clear.addEventListener('click', () => {
     let grid = document.querySelectorAll('.grid');
     let gridValue = prompt('How many grid do you want?');
     grid.forEach(element => {
@@ -34,3 +33,6 @@ button.addEventListener('click', () => {
     });
     createGrid(gridValue);
 });
+
+let rgb = document.querySelector('.rgb');
+
