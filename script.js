@@ -16,9 +16,13 @@ function createGrid(x,rgb) {
         element.style.width = `${dimension}px`;
         element.style.height = `${dimension}px`;
         
+        let random1 = Math.floor(Math.random() * 200); 
+        let random2 = Math.floor(Math.random() * 225); 
+        let random3 = Math.floor(Math.random() * 225); 
+
         element.addEventListener('mouseover', (e) => {
             if(rgb == false)e.target.style.backgroundColor = 'black';
-            else e.target.style.backgroundColor = 'rgb(12,100,80)';
+            else e.target.style.backgroundColor = `rgb(${random1},${random2},${random3})`;
         });
     });
     console.log(960 / x);
